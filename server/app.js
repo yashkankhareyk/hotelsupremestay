@@ -12,7 +12,7 @@ import contactRoutes from './routes/contact.routes.js';
 import compressRoutes from './routes/compress.routes.js';
 
 import { env, isProd } from './config/config.js';
-import { apiLimiter } from './middleware/rateLimit.js';
+import { apilimiter } from './middleware/ratelimit.js';
 import authRoutes from './routes/auth.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import publicRoutes from './routes/public.routes.js';
@@ -30,7 +30,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'"],
       imgSrc: ["'self'", "data:", "https:", "http:"],
-      connectSrc: ["'self'", env.corsOrigin]
+      connectSrc: ["'self'"].concat(env.corsOrigin ? env.corsOrigin.split(',').filter(Boolean) : [])
     }
   },
   crossOriginEmbedderPolicy: false
