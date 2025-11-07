@@ -67,7 +67,7 @@ app.use(hpp());
 app.use('/uploads', express.static(path.resolve(env.uploadDir)));
 
 // Global rate limit for API
-app.use('/api', apiLimiter);
+app.use('/api', apilimiter);
 
 // Routes
 app.use('/api/auth', authRoutes);
