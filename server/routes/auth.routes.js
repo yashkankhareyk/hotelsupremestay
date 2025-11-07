@@ -12,7 +12,7 @@ const csrf = csurf({ cookie: { key: env.csrfCookieName, httpOnly: false, sameSit
 // SPA calls this first to receive CSRF token cookie + value
 router.get('/csrf-token', csrf, (req, res) => res.json({ csrfToken: req.csrfToken() }));
 
-router.post('/login', loginLimiter, csrf, validate(Schemas.login), login);
+router.post('/login', loginlimiter, csrf, validate(Schemas.login), login);
 router.post('/logout', csrf, logout);
 router.get('/me', authGuard, me);
 
