@@ -12,7 +12,7 @@ import contactRoutes from './routes/contact.routes.js';
 import compressRoutes from './routes/compress.routes.js';
 
 import { env, isProd } from './config/config.js';
-import { apiLimiter } from './middleware/rateLimit.js';
+import { apilimiter } from './middleware/rateLimit.js';
 import authRoutes from './routes/auth.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import publicRoutes from './routes/public.routes.js';
