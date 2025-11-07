@@ -3,7 +3,7 @@ import csurf from 'csurf';
 import { env } from '../config/config.js';
 import { login, logout, me } from '../controllers/auth.controller.js';
 import { validate, Schemas } from '../middleware/validate.js';
-import { loginLimiter } from '../middleware/rateLimit.js';
+import { loginlimiter } from '../middleware/ratelimit.js';
 import { authGuard } from '../middleware/auth.js';
 
 const router = Router();
