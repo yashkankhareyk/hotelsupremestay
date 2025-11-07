@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: sunshine-hotel-api
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    healthCheckPath: /api/public/gallery
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 1d
+      - key: COOKIE_NAME
+        value: sh_jwt
+      - key: CSRF_COOKIE_NAME
+        value: sh_csrf
+      - key: CORS_ORIGIN
+        sync: false
+      - key: UPLOAD_DIR
+        value: uploads
+      - key: MAX_UPLOAD_MB
+        value: 5
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: TO_EMAIL
+        sync: false
+
