@@ -21,17 +21,23 @@ const csrf = csurf({
 
 // SPA fetches this first
 router.get('/csrf-token', csrf, (req, res) => {
+  // Always set CSRF cookie for SPA to read
   res.cookie(env.csrfCookieName || 'sh_csrf', req.csrfToken(), {
     httpOnly: false,
     sameSite: isProd ? 'none' : 'lax',
     secure: isProd,
+    path: '/',
   });
   res.json({ csrfToken: req.csrfToken() });
 });
 
-// Login/logout
-router.post('/login', loginlimiter, csrf, validate(Schemas.login), login);
+// Login: CSRF is NOT required for first-time login
+router.post('/login', loginlimiter, validate(Schemas.login), login);
+
+// Logout: CSRF required
 router.post('/logout', csrf, logout);
+
+// /me: Auth required, CSRF not needed for GET
 router.get('/me', authGuard, me);
 
 export default router;
