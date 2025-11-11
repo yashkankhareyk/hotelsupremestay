@@ -12,7 +12,16 @@ import {
 } from '../controllers/home.controller.js';
 
 const router = Router();
-const csrf = csurf({ cookie: { key: env.csrfCookieName, httpOnly: false, sameSite: 'lax', secure: process.env.NODE_ENV === 'production' } });
+const csrf = csurf({
+  cookie: {
+    key: env.csrfCookieName || 'sh_csrf',
+    httpOnly: false, // allow frontend JS to read
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    path: '/',
+    maxAge: 60 * 60 * 1000 // 1 hour
+  }
+});
 
 router.use(authGuard, csrf);
 
