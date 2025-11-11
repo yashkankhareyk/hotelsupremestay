@@ -32,7 +32,7 @@ app.use(
   })
 );
 
-// ✅ CORS configuration
+// ✅ CORS configuration for SPA cross-origin cookies
 const allowedOrigins = [
   "http://localhost:5173", // dev React
   "https://hotelsupremestay900.vercel.app", // Vercel production
@@ -44,11 +44,11 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
       callback(new Error(`CORS blocked: ${origin}`));
     },
-    credentials: true, // Allow cookies
+    credentials: true, // Allow cookies for cross-origin
   })
 );
 
-// Handle preflight
+// Handle preflight for all routes
 app.options("*", cors());
 
 // Middlewares
