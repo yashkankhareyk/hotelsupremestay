@@ -16,8 +16,8 @@ export function authGuard(req, res, next) {
 
 export const cookieOptions = {
   httpOnly: true,
-  sameSite: 'lax',
-  secure: isProd,
+  sameSite: isProd ? 'none' : 'lax', // SPA cross-origin compatibility
+  secure: isProd, // HTTPS only in production
   path: '/',
   maxAge: 24 * 60 * 60 * 1000
 };
