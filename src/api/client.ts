@@ -62,11 +62,11 @@ async function PUT_FORM<T>(url: string, form: FormData, config?: AxiosRequestCon
 
 // ✅ API groups
 export const AuthAPI = {
-  login: (body: { email: string; password: string }) =>
-    POST<{ message: string; user: { id: string; email: string; role: string } }>(
-      "/api/auth/login",
-      body
-    ),
+  login: (body: { username: string; password: string }) =>
+  POST<{ message: string; user: { id: string; email: string; role: string } }>(
+    "/api/auth/login",
+    body
+  ),
   me: () => GET<{ id: string; email: string; role: string }>("/api/auth/me"),
   logout: () => POST<void>("/api/auth/logout", {}),
 };
