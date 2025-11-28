@@ -18,11 +18,10 @@ export function authGuard(req, res, next) {
 // Cookie options suitable for cross-origin (Vercel frontend -> Render backend)
 export const cookieOptions = {
   httpOnly: true,
-  sameSite: isProd ? 'none' : 'lax', // 'none' needed for cross-site in prod
-  secure: isProd,                   // true in prod (HTTPS only)
+  sameSite: isProd ? 'none' : 'lax',
+  secure: isProd,
   path: '/',
-  // Optional: set domain in production so the cookie is tied to frontend domain.
-  // env.cookieDomain should be set in Render to e.g. "hotelsupremestay900.vercel.app"
   ...(isProd && env.cookieDomain ? { domain: env.cookieDomain } : {}),
-  maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+  maxAge: 24 * 60 * 60 * 1000
 };
+
