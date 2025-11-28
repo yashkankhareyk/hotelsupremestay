@@ -16,15 +16,21 @@ export const env = {
   corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   uploadDir: process.env.UPLOAD_DIR || 'uploads',
   maxUploadBytes: Number(process.env.MAX_UPLOAD_MB || 5) * 1024 * 1024,
+
+  // ADD THIS LINE ↓↓↓↓↓↓↓
+  cookieDomain: process.env.COOKIE_DOMAIN || "",
+
   // Cloudinary configuration
   cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
   cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
   cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET,
+
   // Email configuration (optional)
   emailUser: process.env.EMAIL_USER,
   emailPass: process.env.EMAIL_PASS,
   toEmail: process.env.TO_EMAIL || 'admin@sunshinehotel.in'
 };
+
 
 export const isProd = env.nodeEnv === 'production';
 
