@@ -1,3 +1,4 @@
+import { fetchCsrfToken } from "../api/client";
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Trash2, Edit, LogOut, Image, Home, Upload } from 'lucide-react';
