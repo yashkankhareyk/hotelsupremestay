@@ -72,12 +72,21 @@ export const AuthAPI = {
 };
 
 export const PublicAPI = {
-  gallery: () => GET<any[]>("/api/public/gallery"),
+  gallery: () => GET<any[]>("/api/gallery"),
+
   homeImages: (section?: "hero" | "property" | "testimonial") =>
-    GET<any[]>("/api/public/home-images", { params: section ? { section } : undefined }),
-  contact: (payload: { name: string; email: string; phone: string; message: string }) =>
-    POST("/api/public/contact", payload),
+    GET<any[]>("/api/home-images", {
+      params: section ? { section } : undefined,
+    }),
+
+  contact: (payload: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => POST("/api/contact", payload),
 };
+
 
 export const AdminAPI = {
   gallery: {
