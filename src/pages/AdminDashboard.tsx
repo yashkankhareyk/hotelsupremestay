@@ -220,7 +220,7 @@ export default function AdminDashboard() {
         };
       }
 
-      await fetchCsrfToken();
+      
       if (editingImage) {
         // Update existing image
         if (activeTab === 'gallery') {
