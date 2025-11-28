@@ -18,11 +18,11 @@ export function authGuard(req, res, next) {
 // Cookie options suitable for cross-origin (Vercel frontend -> Render backend)
 export const cookieOptions = {
   httpOnly: true,
-  sameSite: isProd ? 'none' : 'lax',
-  secure: isProd,
+  secure: true,           // Required for cross-site cookies (HTTPS always on Render & Vercel)
+  sameSite: 'none',       // Allows frontend <-> backend cookie sharing
   path: '/',
-  domain: isProd ? env.cookieDomain : undefined,
   maxAge: 24 * 60 * 60 * 1000
 };
+
 
 
