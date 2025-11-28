@@ -168,6 +168,7 @@ export default function AdminDashboard() {
     setIsLoading(true);
     
     try {
+      await fetchCsrfToken();
       let payload;
       
       // If we have a file, create FormData
@@ -218,7 +219,8 @@ export default function AdminDashboard() {
           } : {})
         };
       }
-      
+
+      await fetchCsrfToken();
       if (editingImage) {
         // Update existing image
         if (activeTab === 'gallery') {
