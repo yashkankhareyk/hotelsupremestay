@@ -118,18 +118,16 @@ export const AdminAPI = {
 
 export default api;
 
-// CSRF token cache
-let csrfToken: string | null = null;
+
 
 // Fetch CSRF token from backend
 export async function fetchCsrfToken(): Promise<string> {
-  if (csrfToken) return csrfToken;
   const res = await api.get("/api/auth/csrf-token", {
     withCredentials: true,
   });
-  csrfToken = res.data.csrfToken;
-  return csrfToken;
+  return res.data.csrfToken;
 }
+
 
 // Attach CSRF token for state-changing requests
 api.interceptors.request.use(async (config: AxiosRequestConfig) => {
