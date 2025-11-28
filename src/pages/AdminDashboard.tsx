@@ -120,6 +120,8 @@ export default function AdminDashboard() {
     if (window.confirm('Are you sure you want to delete this image?')) {
       setIsLoading(true);
       try {
+        await fetchCsrfToken();
+
         if (activeTab === 'gallery') {
           await AdminAPI.gallery.remove(id);
         } else {
