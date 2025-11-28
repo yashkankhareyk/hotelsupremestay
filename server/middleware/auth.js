@@ -21,7 +21,8 @@ export const cookieOptions = {
   sameSite: isProd ? 'none' : 'lax',
   secure: isProd,
   path: '/',
-  ...(isProd && env.cookieDomain ? { domain: env.cookieDomain } : {}),
+  domain: isProd ? env.cookieDomain : undefined,
   maxAge: 24 * 60 * 60 * 1000
 };
+
 
