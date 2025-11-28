@@ -128,7 +128,6 @@ export async function fetchCsrfToken(): Promise<string> {
   return res.data.csrfToken;
 }
 
-
 // Attach CSRF token for state-changing requests
 api.interceptors.request.use(async (config: AxiosRequestConfig) => {
   const method = config.method?.toLowerCase();
@@ -140,6 +139,8 @@ api.interceptors.request.use(async (config: AxiosRequestConfig) => {
       "X-CSRF-Token": token,
     };
   }
+
   config.withCredentials = true;
   return config;
 });
+
