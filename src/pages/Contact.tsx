@@ -151,7 +151,7 @@ export default function Contact() {
                   <div className="min-w-0 flex-1">
                     <h3 className="font-bold text-[#111827] mb-1 text-sm sm:text-base">Email</h3>
                     <a href="mailto:info@sunshinehotel.com" className="text-sm sm:text-base text-[#6B7280] hover:text-[#F59E0B] transition-colors break-all">
-                      hotelsupremestay900@gmail.com
+                      bookings@hotelsupremestay.in
                     </a>
                   </div>
                 </div>
