@@ -59,7 +59,7 @@ export default function Footer() {
               <li className="flex items-start gap-2 sm:gap-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#F59E0B] flex-shrink-0 mt-1" />
                 <a href="mailto:info@sunshinehotel.com" className="text-sm sm:text-base text-gray-300 hover:text-[#F59E0B] transition-colors break-all">
-                  hotelsupremestay900@gmail.com
+                  bookings@hotelsupremestay.in
                 </a>
               </li>
             </ul>
