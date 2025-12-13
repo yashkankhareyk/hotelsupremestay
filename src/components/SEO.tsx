@@ -50,7 +50,7 @@ export default function SEO({ title, description, canonical, ogImage }: SEOProps
             "longitude": 73.9893
           },
           "telephone": "+91-98765-43210",
-          "email": "hotelsupremestay900@gmail.com",
+          "email": "bookings@hotelsupremestay.in",
           "starRating": {
             "@type": "Rating",
             "ratingValue": "4.8"
