@@ -23,12 +23,12 @@ dist-ssr
 
 # Environment variables
 
-#.env.local
-#.env.production
-#.env.development
-#server/.env
-#server/.env.local
-#server/.env.production
+.env.local
+.env.production
+.env.development
+server/.env
+server/.env.local
+server/.env.production
 
 # Uploads directory (contains user-uploaded files)
 server/uploads/*
