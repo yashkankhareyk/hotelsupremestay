@@ -6,11 +6,28 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
   port: 587,
-  secure: false, // TLS via STARTTLS
+  secure: false, // STARTTLS
   auth: {
-    user: process.env.EMAIL_USER, // MUST be "apikey"
-    pass: process.env.EMAIL_PASS, // Brevo SMTP key
+    user: "apikey",
+    pass: process.env.EMAIL_PASS,
   },
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
+  requireTLS: true,
+  tls: {
+    ciphers: "SSLv3",
+    rejectUnauthorized: false,
+  },
+});
+
+// 🔍 VERIFY SMTP ON STARTUP
+transporter.verify((err) => {
+  if (err) {
+    console.error("❌ BREVO SMTP VERIFY FAILED:", err);
+  } else {
+    console.log("✅ BREVO SMTP READY");
+  }
 });
 
 export default transporter;
