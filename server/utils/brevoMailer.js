@@ -39,7 +39,7 @@ export const sendBrevoMail = async ({ name, email, phone, message }) => {
 
   if (!response.ok) {
     console.error("❌ Brevo API Error:", data);
-    throw new Error("Brevo API mail failed");
+    throw new Error(data.message || "Brevo API mail failed");
   }
 
   return data;
