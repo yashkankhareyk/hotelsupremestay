@@ -75,7 +75,7 @@ export default function Footer() {
                 <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/hotelsupremestay900"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F59E0B] flex items-center justify-center hover:bg-[#d97706] transition-colors"
