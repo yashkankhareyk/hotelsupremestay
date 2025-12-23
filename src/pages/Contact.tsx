@@ -82,7 +82,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Sunshine Hotel in Wagholi, Pune. Contact us for bookings, inquiries, and more information about our services."
+        description="Get in touch with Hotel supreme stay in Wagholi, Pune. Contact us for bookings, inquiries, and more information about our services."
         canonical="/contact"
       />
 
