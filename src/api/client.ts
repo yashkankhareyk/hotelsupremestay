@@ -72,10 +72,10 @@ export const AuthAPI = {
 };
 
 export const PublicAPI = {
-  gallery: () => GET<any[]>("/api/gallery"),
+  gallery: () => GET<any[]>("/api/public/gallery"),
 
   homeImages: (section?: "hero" | "property" | "testimonial") =>
-    GET<any[]>("/api/home-images", {
+    GET<any[]>("/api/public/home-images", {
       params: section ? { section } : undefined,
     }),
 
@@ -84,8 +84,9 @@ export const PublicAPI = {
     email: string;
     phone: string;
     message: string;
-  }) => POST("/api/contact", payload),
+  }) => POST("/api/public/contact", payload),
 };
+
 
 
 export const AdminAPI = {
