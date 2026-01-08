@@ -49,7 +49,7 @@ export default function Gallery() {
       <section className="relative h-[50vh] sm:h-[60vh] md:h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1920&q=80"
+            src="https://res.cloudinary.com/dnocdufwt/image/upload/v1767862740/DSC01554_nny5ii.jpg"
             alt="Gallery"
             className="w-full h-full object-cover"
           />
