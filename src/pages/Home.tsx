@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   // Default hero image URL in case no image is loaded from backend
-  const defaultHeroImageUrl = "https://res.cloudinary.com/dnocdufwt/image/upload/v1768632852/home/hsewqqyo85tsr5zz31tb.webp";
+  const defaultHeroImageUrl = "https://res.cloudinary.com/dnocdufwt/image/upload/v1768634091/DSC01311_qitccp.jpg";
 
   return (
     <>
