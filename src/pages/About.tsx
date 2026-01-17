@@ -40,7 +40,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src="/images/room5_11zon.jpg"
+                src="https://res.cloudinary.com/dnocdufwt/image/upload/v1768636275/DSC01401_hoy9xb.jpg"
                 alt="Luxury Room"
                 className="rounded-lg shadow-xl w-full h-auto"
                 loading="lazy"
