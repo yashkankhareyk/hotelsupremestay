@@ -89,7 +89,7 @@ export default function Contact() {
       <section className="relative h-[50vh] sm:h-[60vh] md:h-96 flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&q=80"
+            src="https://res.cloudinary.com/dnocdufwt/image/upload/v1765350451/gallery/zpwcoeswsawj0swafjn3.webp"
             alt="Contact Us"
             className="w-full h-full object-cover"
           />
