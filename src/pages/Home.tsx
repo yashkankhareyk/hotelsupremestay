@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   // Default hero image URL in case no image is loaded from backend
-  const defaultHeroImageUrl = "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80";
+  const defaultHeroImageUrl = "https://res.cloudinary.com/dnocdufwt/image/upload/v1768632852/home/hsewqqyo85tsr5zz31tb.webp";
 
   return (
     <>
